@@ -1,0 +1,439 @@
+
+
+=====================================================================================
+
+                        LINUX COMMAND NOTES
+
+=====================================================================================
+
+COMMAND: PWD
+
+FULL FORM: Print Working Directory
+
+================================================================================
+
+**1. WHAT IS PWD?**
+
+================================================================================
+
+The `pwd` command stands for "Print Working Directory".
+
+It is used to display the complete path of the directory in which
+
+we are currently working.
+In simple words: &#x20;   pwd tells us:  "Where am I currently located in the Linux file system?"
+\--------------------------------------------------------------------------------
+
+EXAMPLE
+
+\--------------------------------------------------------------------------------
+**COMMAND: pwd**
+**OUTPUT: /home/Akshata**
+
+**MEANING:** &#x20;   **The current working directory is /home/Akshata.**
+
+
+**================================================================================**
+
+**2. WHY DO WE USE PWD?**
+
+**================================================================================**
+
+Linux has a hierarchical file system containing directories and files.
+
+While working in Linux, we may move between different directories
+
+using the `cd` command.
+
+Therefore, we need to know our current location.
+
+The `pwd` command helps us identify our current location.
+
+It is especially useful before performing operations such as:
+
+   cd
+   mkdir
+
+  touch
+
+  cp
+
+  mv
+
+  rm
+
+\--------------------------------------------------------------------------------
+
+**EXAMPLE**
+
+**--------------------------------------------------------------------------------**
+
+**COMMAND: pwd**
+
+**OUTPUT:  /home/Akshata**
+
+**INTERPRETATION:**
+
+  **/              -> Root directory**
+
+ **home           -> Home directory**
+   **Akshata        -> User's home directory**
+
+**Therefore:** &#x20;   **/home/Akshata**
+
+**is the current working directory**.
+
+================================================================================
+
+**3. MAN PWD**
+
+================================================================================
+
+COMMAND: man pwd
+
+FULL FORM:man = Manual
+
+PURPOSE:  &#x20;   The `man pwd` command opens the manual/documentation
+
+&#x20;   of the `pwd` command.
+
+The manual provides detailed information about the command,
+
+including:
+&#x20;   - Command name
+
+&#x20;   - Syntax
+
+&#x20;   - Description
+
+&#x20;   - Options
+
+&#x20;   - Other technical information
+
+\--------------------------------------------------------------------------------
+
+**EXAMPLE**
+
+**--------------------------------------------------------------------------------**
+
+**COMMAND: man pwd**
+
+**ACTION: PWD(1)                                                        General Commands Manual                                                        PWD(1)**
+
+**NAME**
+
+&#x20;      **pwd - Display the full filename of the current working directory.**
+
+**SYNOPSIS**
+
+&#x20;      **pwd \[-L|--logical] \[-P|--physical] \[-h|--help] \[-V|--version]**
+
+**DESCRIPTION**
+
+&#x20;      **Display the full filename of the current working directory.**
+
+**OPTIONS**
+
+&#x20;      **-L, --logical**
+
+&#x20;             **use PWD from environment, even if it contains symlinks**
+
+&#x20;      **-P, --physical**
+
+&#x20;             **avoid all symlinks**
+
+&#x20;      **-h, --help**
+
+&#x20;             **Print help**
+
+&#x20;      **-V, --version**
+
+&#x20;             **Print version**
+
+**VERSION  v(uutils coreutils) 0.8.0The pwd manual page opens in the terminal.**
+
+**TO EXIT:**
+
+&#x20;   **Press q**
+================================================================================
+
+**4. HELP PWD**
+
+================================================================================
+COMMAND: help pwd
+
+PURPOSE: &#x20;   The `help pwd` command displays the Bash built-in
+
+&#x20;   help information for the `pwd` command.
+
+Your Bash system shows:
+
+&#x20;   pwd: pwd \[-LP]
+
+This means that the Bash built-in `pwd` supports:
+
+&#x20;   -L
+
+&#x20;   -P
+
+\--------------------------------------------------------------------------------
+
+**EXAMPLE**
+
+**--------------------------------------------------------------------------------**
+
+**COMMAND: help pwd**
+
+**IMPORTANT OUTPUT:pwd: pwd \[-LP]**
+
+&#x20;   **Print the name of the current working directory.**
+
+  **Options:**
+
+    **-L        print the value of $PWD if it names the current working**
+
+              **directory**
+
+    **-P        print the physical directory, without any symbolic links**
+
+
+   **By default, `pwd' behaves as if `-L' were specified.**
+
+  **Exit Status:**
+
+  **Returns 0 unless an invalid option is given or the current directory**
+
+  **cannot be read.**
+
+  **pwd: pwd \[-LP]**
+
+  **-L    print the value of $PWD if it names the current**
+       **working directory**
+
+  **-P    print the physical directory, without any**
+         **symbolic links**
+
+================================================================================
+
+**5. PWD -L**
+
+================================================================================
+
+COMMAND: pwd -L
+
+FULL FORM: -L = Logical
+
+PURPOSE: &#x20;   The `-L` option displays the logical path of the
+
+&#x20;   current working directory.
+
+It uses the value of the `$PWD` environment variable
+
+when it correctly represents the current directory.
+
+By default, Bash `pwd` behaves as if `-L` was specified.
+
+\--------------------------------------------------------------------------------
+
+**EXAMPLE**
+
+**--------------------------------------------------------------------------------**
+**COMMAND: pwd -L**
+**OUTPUT: /home/Akshata**
+**MEANING:** &#x20;   **The logical path of the current directory is:**
+
+&#x20;   **/home/Akshata**
+
+================================================================================
+
+**6. PWD -P**
+
+================================================================================
+
+COMMAND: pwd -P
+
+FULL FORM:  -P = Physical
+
+PURPOSE: &#x20;   The `-P` option displays the physical/actual path
+
+&#x20;   of the current working directory.
+
+It does not use symbolic links.
+
+If symbolic links are involved, `-P` resolves them and
+
+shows the actual physical directory path.
+
+
+\--------------------------------------------------------------------------------
+
+**EXAMPLE**
+
+**--------------------------------------------------------------------------------**
+
+**COMMAND:  pwd -P**
+
+**OUTPUT:  /home/Akshata**
+**MEANING:** &#x20;   **The physical path of the current directory is:**
+
+&#x20;   **/home/Akshata**
+
+===============================================================================
+
+**7. DIFFERENCE BETWEEN -L AND -P**
+
+================================================================================
+
++----------------------+-----------------------------------------------+
+
+| OPTION               | MEANING                                       |
+
++----------------------+-----------------------------------------------+
+
+| -L                   | Logical path                                  |
+
+| -P                   | Physical/actual path                          |
+
++----------------------+-----------------------------------------------+
+
+
+
+In your current directory:
+
+&#x20;   pwd -L
+
+&#x20;   /home/Akshata
+
+&#x20;   pwd -P
+
+&#x20;   /home/Akshata
+
+Both commands give the same output because there is
+
+no symbolic-link difference in your current location.
+
+The difference becomes important when symbolic links
+
+are involved.
+
+================================================================================
+
+8\. PWD -LP
+
+================================================================================
+
+
+
+COMMAND:  pwd -LP
+
+PURPOSE: &#x20;   This command provides both the `-L` and `-P` options &#x20;   together.
+
+Your system accepts this command.
+
+\--------------------------------------------------------------------------------
+
+EXAMPLE
+
+\--------------------------------------------------------------------------------
+
+**COMMAND:  pwd -LP**
+
+**OUTPUT:  /home/Akshata**
+
+**NOTE:**
+
+&#x20;   **For beginners, learn these separately first:**
+
+&#x20;       **pwd -L**
+
+&#x20;       **pwd -P**
+
+**Then understand that options can also be combined**.
+
+================================================================================
+
+**9. PWD --VERSION**
+
+================================================================================
+
+COMMAND TESTED:  pwd --version
+STATUS: DOES NOT WORK ON YOUR BASH
+
+\--------------------------------------------------------------------------------
+
+OUTPUT FROM YOUR SYSTEM
+
+\--------------------------------------------------------------------------------
+
+
+&#x20;   -bash: pwd: --: invalid option
+
+&#x20;   pwd: usage: pwd \[-LP]
+
+\--------------------------------------------------------------------------------
+
+WHY DOES IT NOT WORK?
+
+\--------------------------------------------------------------------------------
+
+Your `pwd` command is the Bash built-in `pwd`.
+
+The Bash built-in `pwd` supports:
+
+&#x20;   -L
+
+&#x20;   -P
+
+It does NOT support:  --version
+
+THEREFORE:
+
+&#x20;   pwd --version
+
+&#x20;   = NOT SUPPORTED BY YOUR BASH PWD
+
+&#x20;   Bash has its own built-in implementation of `pwd`.
+
+This is why some options found in other documentation
+
+may not work with the Bash built-in version.
+
+
+\----------------------------------------------------------------------------------------------------------------------
+
++------------------+-----------------+--------------------------+
+
+| COMMAND          | STATUS          | PURPOSE                  |
+
++------------------+-----------------+--------------------------+
+
+| pwd              | WORKS           | Current directory        |
+
+| pwd -L           | WORKS           | Logical path             |
+
+| pwd -P           | WORKS           | Physical path            |
+
+| pwd -LP          | WORKS           | Both options             |
+
+| help pwd         | WORKS           | Bash help                |
+
+| man pwd          | WORKS           | Manual/documentation     |
+
++------------------+-----------------+--------------------------+
+
+| pwd -V           | DOES NOT WORK   | Version option           |
+
+| pwd -v           | DOES NOT WORK   | Version option           |
+
+| pwd -h           | DOES NOT WORK   | Help option              |
+
+| pwd -help        | DOES NOT WORK   | Invalid option           |
+
+| pwd --version    | DOES NOT WORK   | Version option           |
+
++------------------+-----------------+--------------------------+
+
+
+
+
+
